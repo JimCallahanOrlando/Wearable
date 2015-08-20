@@ -1,5 +1,5 @@
 ### FILE: run_analysis.R
-### PURPOSE: create tidy data sub-sample per requirements.
+### PURPOSE:  Merge training and test and create tidy data per requirements.
 ### AUTHOR:   James B. Callahan (Jim)
 ### DATE:     August 19, 2015
 ###
@@ -63,8 +63,12 @@ subject_test <- read.table("data/UCI_HAR_Dataset/test/subject_test.txt",
 
 ### STEP 1: MERGE THE (Test and Training) DATA
 ### Stack the train and test data sets
-X_all <-rbind(X_train, X_test)
-Y_all <-rbind(Y_train, Y_test)
+
+subject_all <- rbind(subject_train, subject_test)
+Y_all       <-rbind(Y_train, Y_test)
+X_all       <-rbind(X_train, X_test)
+
+
 
 ### STEP 2: EXTRACT ONLY VARIABLES THAT 
 ###         REPRESENT MEAN AND STD DEV FOR EACH MEASUREMENT
@@ -73,12 +77,24 @@ Y_all <-rbind(Y_train, Y_test)
 ### STEP 3: APPLY ACTIVITY NAMES TO DATA 
 ###         (activity_labels.txt -- can use R ordered factors)
 ### Join the y (activity?) column 
-YX_all = cbind(Y_all, X_all)
+YXS_all = cbind(subject_all, Y_all, X_all)
 
 
 
 
 ### STEP 4: LABEL THE DATA SET WITH DESCRIPTIVE VARIABLE NAMES (features.txt)
+
+### Check names -- see last example in make.names() documentation
+### state.name[make.names(state.name) != state.name] # those 10 with a space
+### features[make.names(features) != features]
+
+FeatureTrim  <- trimws(features, which = "left")
+FeatureTrim
+
+# FeatureNames <- make.names(FeatureTrim)
+# FeatureNames
+
+
 
 
 ### STEP 5: 

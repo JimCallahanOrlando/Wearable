@@ -1,5 +1,5 @@
 ### FILE:     Read_HAR_Wearable_data.R
-### PURPOSE:  Merge training and test sets and create tidy data file per requirements
+### PURPOSE:  Merge training and test and create tidy data per requirements.
 ### AUTHOR:   James B. Callahan (Jim)
 ### DATE:     August 12, 2015
 ###
