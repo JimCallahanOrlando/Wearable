@@ -72,6 +72,12 @@ X_all       <-rbind(X_train, X_test)
 
 ### STEP 2: EXTRACT ONLY VARIABLES THAT 
 ###         REPRESENT MEAN AND STD DEV FOR EACH MEASUREMENT
+match_mean <- grep("mean", features$V2)
+match_std  <- grep("std", features$V2)
+match <- c(match_mean, match_std)
+match <- sort(match)
+
+
 
 
 ### STEP 3: APPLY ACTIVITY NAMES TO DATA 
