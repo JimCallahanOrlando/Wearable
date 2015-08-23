@@ -202,7 +202,7 @@ wearableTidy <- melt(Subject_Y_XView, id = c("subject", "activity"),
                 measure.vars = FView2$V1)
 colnames(wearableTidy) <- c("subject", "activity", "feature", "value")
 
-str(wearableTidy)
+
 
 ### STEP 5: From the data set in step 4, create a second, tidy data set 
 ###         with the average of each variable for each activity and each subject.
@@ -211,11 +211,22 @@ wearableSummary = ddply( wearableTidy, .(subject, activity, feature), summarize,
                      mean = mean(value)
                      )
 str(wearableSummary)
+# ?capature.output
+# http://127.0.0.1:30448/library/utils/html/capture.output.html
+str_wearableSummary <- capture.output(str(wearableSummary))
 
 write.table(wearableSummary, 
-            file = "data/wearableSummary.csv", 
+            file = "data/wearableSummary.txt", 
             append = FALSE,
-            sep = " ",
+            sep = "\t",
             row.name=FALSE,
             col.names = TRUE
             )
+
+# http://stackoverflow.com/questions/15488350/programmatically-creating-markdown-tables-in-r-with-knitr
+library(knitr)
+kable(head(iris[,1:3]), format = "markdown")
+
+
+library(knitr)
+kable(head(wearableSummary[,1:4]), format = "markdown")
