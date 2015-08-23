@@ -1,4 +1,5 @@
 ## Wearable  ...two data sets
+## and a text file
 
 James B. Callahan (Jim)  
 August 2015
@@ -13,14 +14,19 @@ a course project for..
 (by course instructor)
 
 #### Abstract
-The **"Human Activity Recognition"** source data files were combined into one (in memory) **R** data set (organized according to the principles of **"tidy data"** developed by Dr. Hadley Wickham and covered in the course) by the program **run_analysis.R**. Per the **"Project Requirements"** (below) "only the mean and standard deviation for each measurement [feature]" were included in the (in memory) R data set. According to the source data's **README.txt** file: "Features are normalized and bounded within [-1,1]." In statistical terms, "normalization" usually refers to subtracting the mean and dividing by either the population or sample standard deviation see for example the Wikipedia article:  
+The **"Human Activity Recognition"** (via smart phone sensors) source data files were combined into one (in memory) **R** data set (organized according to the principles of **"tidy data"** developed by Dr. Hadley Wickham and covered in the course) by the program **run_analysis.R**. Per the **"Project Requirements"** (below) "only the mean and standard deviation for each measurement [feature]" were included in the (in memory) R data set. According to the source data's **README.txt** file: "Features are normalized and bounded within [-1,1]." In statistical terms, "normalization" usually refers to subtracting the mean and dividing by either the population or sample standard deviation see for example the Wikipedia article:  
 https://en.wikipedia.org/wiki/Normalization_(statistics)  
 -- it has not been independently confirmed that that is the "normalization" process used or intended by the authors of the source data set.
-Pursuant to **"Project Requirement" #5** (below) the program **run_analysis.R** created **a second data set** averaging the already normalized values (perhaps to create an "expected value?") and wrote this data set **to disk** as a **text file**.  
+Pursuant to **"Project Requirement" #5** (below) the program **run_analysis.R** created, in addition, **a second data set** computing the average ("of each variable for each activity and each subject") of the already normalized values (perhaps to create an "expected value?") and wrote this second in memory data set **to disk** as a text file (**wearableSummary.txt**).  
 
+#### Assignment:
+You will be required to submit:   
+1) a **tidy data set** as described below,   
+2) a **link** to a **Github repository** with your **script** for performing the analysis, and  
+3) a **code book** that describes the variables, the data, and any transformations or work that you performed to clean up the data called **CodeBook.md**.
  
 #### Project Requirements:
-Create one **R** script called **run_analysis.R** that does the following. 
+Create one **R** script called **run_analysis.R** that does the following.  
   1. Merges the training and the test sets to create one data set.  
   2. Extracts only the mean and standard deviation for each measurement.  
   3. Uses descriptive activity names to name the activities in the data set.  
@@ -29,11 +35,11 @@ Create one **R** script called **run_analysis.R** that does the following.
      with the average of each variable for each activity and each subject.  
      
 #### Additional Instructions:
-"Please submit a link to a Github repo with the code for performing your analysis.   
-The code should have a file **run_analysis.R** in the main directory   
-that can be run as long as the Samsung data [UCI HAR] is in your working directory. 
-The output should be the tidy data set you submitted for part 1.  
-You should include a **README.md** in the repo describing how the script works 
+"Please submit a **link** to a **Github repo** with the **code** for performing your analysis.   
+The code [repo?] should have a file **run_analysis.R** in the main directory   
+that can be run as long as the Samsung data [/data/UCI_HAR_Data] is in your working [Wearable/data] directory. 
+The output should be the tidy data set (**wearableSummary.txt**) you submitted for part 1.  
+You should include a **README.md**  [this file] in the repo describing how the script works 
 and the **code book** describing the variables.  
 
 #### Evaluation Criteria
@@ -41,6 +47,9 @@ and the **code book** describing the variables.
 available to you with the data to indicate all the variables and summaries you calculated, 
 along with units, and any other relevant information?  
 ...I was able to follow the **README** in the directory that explained what the analysis files did."  
+
+#### Analysis: run_analysis.R
+The description of **run_analysis.R** goes here.  
 
 #### Source Data:
 
